@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Private project notes, research and source files (keep local)
+design/
+CLAUDE.md
+temp-for-docs/
+
+# Build scratch
+__pycache__/
+tools/.pdf-build/
