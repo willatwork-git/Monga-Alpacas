@@ -11,10 +11,12 @@
     document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&header.classList.contains('menu-open')){ header.classList.remove('menu-open'); btn.setAttribute('aria-expanded','false'); btn.focus(); } });
   }
   // Section highlighting on the home page (links that point to #sections on this page).
-  var links=[].slice.call(nav.querySelectorAll('a')).filter(function(a){ return /^(index\.html)?#/.test(a.getAttribute('href')) && !document.body.classList.contains('no-spy'); });
-  var extra={paddock:'buy'};
-  var ids=links.map(function(a){return a.getAttribute('href').split('#')[1];});
-  var secs=[]; ids.forEach(function(id){ var el=document.getElementById(id); if(el) secs.push({el:el,id:id}); });
+  // Home page sections without their own menu link light up the nearest page link (Bob -> articles, photos -> gallery).
+  function key(a){ var h=a.getAttribute('href'); return h.indexOf('#')>-1 ? h.split('#')[1] : h; }
+  var extra={paddock:'buy', bob:'articles.html', album:'gallery.html'};
+  var onHome=!!document.getElementById('buy') && !document.body.classList.contains('no-spy');
+  var links=onHome ? [].slice.call(nav.querySelectorAll('a')).filter(function(a){ return /^(index\.html)?#|^(articles|gallery)\.html$/.test(a.getAttribute('href')); }) : [];
+  var secs=[]; links.forEach(function(a){ var id=key(a); if(id.indexOf('.html')<0){ var el=document.getElementById(id); if(el) secs.push({el:el,id:id}); } });
   Object.keys(extra).forEach(function(k){ var el=document.getElementById(k); if(el) secs.push({el:el,id:extra[k]}); });
   var current=null,ticking=false;
   function update(){
@@ -24,7 +26,7 @@
     secs.forEach(function(s){ var t=s.el.getBoundingClientRect().top; if(t<=line&&t>best){best=t;active=s.id;} });
     if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4 && document.getElementById('contact')) active='contact';
     if(active===current) return; current=active;
-    links.forEach(function(a){ if(a.getAttribute('href').split('#')[1]===active) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); });
+    links.forEach(function(a){ if(key(a)===active) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); });
   }
   window.addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(update);} },{passive:true});
   window.addEventListener('resize',function(){ setHdr(); update(); });

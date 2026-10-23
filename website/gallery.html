@@ -58,7 +58,7 @@
   <div class="wrap">
     <a class="logo" href="index.html">Monga Alpacas<small>Huacaya stud · Braidwood NSW</small></a>
     <nav id="main-nav" aria-label="Main">
-      <a href="index.html#buy">Alpacas for sale</a>
+      <a href="index.html#buy">Buying alpacas</a>
       <a href="index.html#bloodlines">Stud services</a>
       <a href="index.html#honours">Show record</a>
       <a href="articles.html">Bob’s articles</a>
@@ -82,7 +82,7 @@
     <a class="m-tile " href="#titan-at-5-years" data-open="titan-at-5-years"><img src="gallery/thumb/titan-at-5-years.jpg" alt=""><span>Titan at 5 years</span></a>
   </div>
   <div class="wrap" data-fb="G2 Gallery (all photos)">
-  <div class="chips" role="group" aria-label="Show photos of"><button type="button" data-f="all" aria-pressed="true">All <span>40</span></button><button type="button" data-f="alpacas" aria-pressed="false">Alpacas <span>21</span></button><button type="button" data-f="river" aria-pressed="false">The river <span>8</span></button><button type="button" data-f="farm" aria-pressed="false">The farm <span>8</span></button><button type="button" data-f="show" aria-pressed="false">Show bench <span>3</span></button></div>
+  <div class="chips" role="group" aria-label="Show photos of"><button type="button" data-f="all" aria-pressed="true">All <span>39</span></button><button type="button" data-f="alpacas" aria-pressed="false">Alpacas <span>20</span></button><button type="button" data-f="river" aria-pressed="false">The river <span>8</span></button><button type="button" data-f="farm" aria-pressed="false">The farm <span>8</span></button><button type="button" data-f="show" aria-pressed="false">Show bench <span>3</span></button></div>
   <ul class="grid" id="grid">
       <li class="tile" data-cat="farm" id="frosty-morning"><a href="gallery/full/frosty-morning.jpg" data-w="1800" data-h="1010"><img src="gallery/thumb/frosty-morning.jpg" width="720" height="404" alt="A frosty morning with mist still on the hills" loading="lazy"></a><p>A frosty morning with mist still on the hills</p></li>
       <li class="tile" data-cat="alpacas" id="its-mine"><a href="gallery/full/its-mine.jpg" data-w="1800" data-h="1438"><img src="gallery/thumb/its-mine.jpg" width="720" height="575" alt="It’s mine!" loading="lazy"></a><p>It’s mine!</p></li>
@@ -121,7 +121,6 @@
       <li class="tile" data-cat="farm" id="in-the-yards"><a href="gallery/full/in-the-yards.jpg" data-w="1800" data-h="1010"><img src="gallery/thumb/in-the-yards.jpg" width="720" height="404" alt="In the covered yards" loading="lazy"></a><p>In the covered yards</p></li>
       <li class="tile" data-cat="river" id="helicopter-over-the-river"><a href="gallery/full/helicopter-over-the-river.jpg" data-w="1800" data-h="1010"><img src="gallery/thumb/helicopter-over-the-river.jpg" width="720" height="404" alt="A firefighting helicopter filling up from the river" loading="lazy"></a><p>A firefighting helicopter filling up from the river</p></li>
       <li class="tile small" data-cat="alpacas" id="forest-grazing"><a href="gallery/full/forest-grazing.jpg" data-w="350" data-h="338"><img src="gallery/thumb/forest-grazing.jpg" width="350" height="338" alt="Forest grazing" loading="lazy"></a><p>Forest grazing</p></li>
-      <li class="tile" data-cat="alpacas" id="at-the-fence"><a href="gallery/full/at-the-fence.jpg" data-w="1800" data-h="936"><img src="gallery/thumb/at-the-fence.jpg" width="720" height="374" alt="Everyone at the fence" loading="lazy"></a><p>Everyone at the fence</p></li>
       <li class="tile small" data-cat="alpacas" id="meadow-grazing"><a href="gallery/full/meadow-grazing.jpg" data-w="350" data-h="196"><img src="gallery/thumb/meadow-grazing.jpg" width="350" height="196" alt="Meadow grazing" loading="lazy"></a><p>Meadow grazing</p></li>
       <li class="tile" data-cat="farm" id="spread-across-the-paddock"><a href="gallery/full/spread-across-the-paddock.jpg" data-w="1800" data-h="1010"><img src="gallery/thumb/spread-across-the-paddock.jpg" width="720" height="404" alt="Spread across the paddock" loading="lazy"></a><p>Spread across the paddock</p></li>
   </ul>
@@ -130,7 +129,7 @@
 <footer class="site-foot">
   <div class="wrap foot-grid">
     <div><b class="foot-brand">Monga Alpacas</b><p>Huacaya stud<br>59 River Forest Road<br>Monga via Braidwood NSW 2622</p></div>
-    <nav aria-label="Footer"><a href="index.html#buy">Alpacas for sale</a><a href="index.html#bloodlines">Stud services</a><a href="index.html#honours">Show record</a><a href="articles.html">Bob’s articles</a><a href="gallery.html">Gallery</a><a href="index.html#contact">Visit &amp; contact</a></nav>
+    <nav aria-label="Footer"><a href="index.html#buy">Buying alpacas</a><a href="index.html#bloodlines">Stud services</a><a href="index.html#honours">Show record</a><a href="articles.html">Bob’s articles</a><a href="gallery.html">Gallery</a><a href="index.html#contact">Visit &amp; contact</a></nav>
     <div><a class="foot-phone" href="tel:+61488292835">0488 292 835</a><br><a href="mailto:mongaalpacas@bigpond.com">mongaalpacas@bigpond.com</a></div>
   </div>
   <div class="wrap foot-base"><span>© 2026 Monga Alpacas</span><span>About 20 km east of Braidwood, NSW</span></div>
@@ -166,7 +165,7 @@
   document.getElementById('lb-next').onclick=function(){show(cur+1);};
   document.getElementById('lb-close').onclick=function(){lb.close();};
   lb.addEventListener('close',function(){document.body.style.overflow='';history.replaceState(null,'',location.pathname); if(list[cur]) list[cur].querySelector('a').focus();});
-  lb.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') show(cur+1); if(e.key==='ArrowLeft') show(cur-1); });
+  document.addEventListener('keydown',function(e){ if(!lb.open) return; if(e.key==='ArrowRight') show(cur+1); if(e.key==='ArrowLeft') show(cur-1); });
   lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('lb-stage')) lb.close(); });
   var x0=null; lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
   lb.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50) show(cur+(dx<0?1:-1)); x0=null; });
